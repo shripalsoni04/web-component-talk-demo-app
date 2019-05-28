@@ -1,4 +1,5 @@
-const template = `
+const template = document.createElement('template');
+template.innerHTML = `
   <style>
     .header {
       padding: 12px 16px;
@@ -66,12 +67,16 @@ class Panel extends HTMLElement {
   
   constructor() {
     super();
-    this.isCollapsed = false;
-  }
 
-  connectedCallback() {
-    this.innerHTML = template;
-    this.querySelector('.header').addEventListener('click', () => {
+    // State initialization
+    this.isCollapsed = false;
+
+    // Attach shadowRoot and template of the component.
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    shadowRoot.appendChild(template.content.cloneNode(true));
+
+    // Attach event listeners
+    shadowRoot.querySelector('.header').addEventListener('click', () => {
       this.togglePanel();
     });
   }
@@ -86,7 +91,7 @@ class Panel extends HTMLElement {
   }
 
   refreshPanelCollapseUIState() {
-    const panelEle = this.querySelector('.panel');
+    const panelEle = this.shadowRoot.querySelector('.panel');
 
     if (this.isCollapsed) {
       panelEle.classList.add('collapsed');
