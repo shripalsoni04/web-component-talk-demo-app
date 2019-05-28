@@ -62,8 +62,16 @@ const template = `
   </div>
 `;
 
-class Panel extends HTMLElement {
-  
+export class Panel extends HTMLElement {
+  set title(title) {
+    this._title = title;
+    this.shadowRoot.querySelector('.title').innerText = title;
+  }
+
+  get title() {
+    return this._title;
+  }
+
   constructor() {
     super();
 
