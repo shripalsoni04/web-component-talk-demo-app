@@ -1,4 +1,5 @@
-const template = `
+const template = document.createElement('template');
+template.innerHTML = `
   <style>
     .header {
       padding: 12px 16px;
@@ -62,8 +63,16 @@ const template = `
   </div>
 `;
 
-class Panel extends HTMLElement {
-  
+export class Panel extends HTMLElement {
+  set title(title) {
+    this._title = title;
+    this.shadowRoot.querySelector('.title').innerText = title;
+  }
+
+  get title() {
+    return this._title;
+  }
+
   constructor() {
     super();
 
@@ -72,7 +81,7 @@ class Panel extends HTMLElement {
 
     // Attach shadowRoot and template of the component.
     const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.innerHTML = template;
+    shadowRoot.appendChild(template.content.cloneNode(true));
 
     // Attach event listeners
     shadowRoot.querySelector('.header').addEventListener('click', () => {
