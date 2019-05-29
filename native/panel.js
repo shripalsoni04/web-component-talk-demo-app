@@ -63,9 +63,18 @@ const template = `
 `;
 
 export class Panel extends HTMLElement {
+  static get observedAttributes() {
+    return ['title'];
+  }
+
   set title(title) {
     this._title = title;
     this.shadowRoot.querySelector('.title').innerText = title;
+
+    // Optional: Reflect property value back to attribute
+    if (this.getAttribute('title') !== title) {
+      this.setAttribute('title', title);
+    }
   }
 
   get title() {
@@ -86,6 +95,12 @@ export class Panel extends HTMLElement {
     shadowRoot.querySelector('.header').addEventListener('click', () => {
       this.togglePanel();
     });
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'title') {
+      this.title = newValue;
+    }
   }
 
   disconnectedCallback() {
