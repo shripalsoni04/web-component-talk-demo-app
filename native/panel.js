@@ -120,6 +120,7 @@ export class Panel extends HTMLElement {
   togglePanel() {
     this.isCollapsed = !this.isCollapsed;
     this.refreshPanelCollapseUIState();
+    this.dispatchEvent(new CustomEvent('toggle', { detail: { isCollapsed: this.isCollapsed } }));
   }
 
   refreshPanelCollapseUIState() {
