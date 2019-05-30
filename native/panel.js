@@ -45,17 +45,25 @@ const template = `
     .panel.collapsed .header .collapse-icons .chevron-down {
       display: block;
     }
+
+    .header .right-side-content {
+      display: flex;
+      align-items: center;
+    }
   </style>
   <div class="panel">
     <div class="header">
       <div class="title">Panel Header</div>
-      <div class="collapse-icons">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="chevron-down">
-          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="chevron-up">
-          <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/><path d="M0 0h24v24H0z" fill="none"/>
-        </svg>
+      <div class="right-side-content">
+        <slot name="header-extra-content"></slot>
+        <div class="collapse-icons">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="chevron-down">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="chevron-up">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/><path d="M0 0h24v24H0z" fill="none"/>
+          </svg>
+        </div>
       </div>
     </div>
     <div class="content">

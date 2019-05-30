@@ -1,1 +1,1 @@
-# Step-6: Accept user defined content in panel-content area using slot
+# Step-7: Accept user defined content in panel-header using named slot
