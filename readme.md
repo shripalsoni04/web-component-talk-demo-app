@@ -1,1 +1,1 @@
-# Step-5: Implement title attribute and reflect change in title property to attribute
+# Step-6: Accept user defined content in panel-content area using slot
