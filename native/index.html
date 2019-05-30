@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Web Component Demo App</title>
+    <style>
+      .user-defined-content {
+        color: green;
+      }
+    </style>
   </head>
   <body>
     <h3 class="page-header">Web Component Demo App</h3>
 
-    <sh-panel></sh-panel>
+    <sh-panel>
+      <div class="user-defined-content">User Defined Panel Content</div>
+    </sh-panel>
 
     <script type="module" src="./index.js"></script>
   </body>

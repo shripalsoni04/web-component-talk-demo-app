@@ -58,7 +58,9 @@ const template = `
         </svg>
       </div>
     </div>
-    <div class="content">Panel Content</div>
+    <div class="content">
+      <slot>Default Panel Content...</slot>
+    </div>
   </div>
 `;
 
