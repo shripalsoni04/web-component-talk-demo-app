@@ -1,1 +1,1 @@
-# Step-7: Accept user defined content in panel-header using named slot
+# Step-8: Emit custom event on toggle panel
