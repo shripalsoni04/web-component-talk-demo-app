@@ -1,8 +1,9 @@
-const template = `
+const template = document.createElement('template');
+template.innerHTML = `
   <style>
     .header {
       padding: 12px 16px;
-      background-color: #0078b7;
+      background-color: var(--header-bg-color, #0078b7);
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -99,7 +100,7 @@ export class Panel extends HTMLElement {
 
     // Attach shadowRoot and template of the component.
     const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.innerHTML = template;
+    shadowRoot.appendChild(template.content.cloneNode(true));
 
     // Attach event listeners
     shadowRoot.querySelector('.header').addEventListener('click', () => {
