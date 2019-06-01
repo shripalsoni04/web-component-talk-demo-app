@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/stencil.esm.js"></script>
+    <script nomodule src="/build/stencil.js"></script>
+    <style>
+      sh-panel {
+        --header-bg-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <sh-panel title="Custom Panel Title">
+      <div class="user-defined-content">User Defined Panel Content</div>
+      <button slot="header-extra-content" type="button">Delete</button>
+    </sh-panel>
+
+    <script>
+      document
+        .querySelector("sh-panel")
+        .addEventListener("toggle", event => console.log(event));
+    </script>
+  </body>
+</html>

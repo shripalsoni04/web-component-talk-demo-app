@@ -1,1 +1,1 @@
-# Step-10: Use css-variable to style panel header
+# Stencil: Implement panel component using stenciljs

@@ -1,0 +1,68 @@
+@import "../../global";
+@import "./panel.vars";
+
+:host {
+  /**
+   * @prop --header-bg-color: Panel header background color
+   */
+  --header-bg-color: #{$panel-header-background-color};
+}
+
+.panel {
+  .header {
+    padding: 12px 16px;
+    background-color: var(--header-bg-color);
+    color: $panel-header-text-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+
+    .right-side-content {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .collapse-icons {
+    svg {
+      fill: $panel-header-icon-color;
+    }
+
+    .chevron-down {
+      display: none;
+    }
+
+    .chevron-up {
+      display: block;
+    }
+  }
+
+  .content {
+    padding: 12px 16px;
+    border: 1px solid $panel-content-border-color;
+    border-top: 0;
+    border-radius: 3px;
+  }
+
+  &.collapsed {
+    .header {
+      border-radius: 3px;
+    }
+
+    .collapse-icons {
+      .chevron-up {
+        display: none;
+      }
+
+      .chevron-down {
+        display: block;
+      }
+    }
+
+    .content {
+      display: none;
+    }
+  }
+}
