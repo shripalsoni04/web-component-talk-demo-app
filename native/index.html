@@ -9,13 +9,19 @@
       .user-defined-content {
         color: green;
       }
+
+      .inner-element {
+        color: blue;
+      }
     </style>
   </head>
   <body>
     <h3 class="page-header">Web Component Demo App</h3>
 
     <sh-panel>
-      <div class="user-defined-content">User Defined Panel Content</div>
+      <div class="user-defined-content">
+        <span class="inner-element">User Defined Panel Content</span>
+      </div>
     </sh-panel>
 
     <script type="module" src="./index.js"></script>

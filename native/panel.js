@@ -46,6 +46,14 @@ template.innerHTML = `
     .panel.collapsed .header .collapse-icons .chevron-down {
       display: block;
     }
+
+    ::slotted(.user-defined-content) {
+      color: red;
+    }
+
+    ::slotted(.inner-element) {
+      color: purple;
+    }
   </style>
   <div class="panel">
     <div class="header">
