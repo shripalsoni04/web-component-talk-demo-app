@@ -26,7 +26,7 @@ export class PanelComponent {
    * Call this method to toggle panel content visibility programmatically.
    */
   @Method()
-  togglePanel() {
+  async togglePanel() {
     this.isCollapsed = !this.isCollapsed;
   }
 

@@ -21,8 +21,21 @@ export namespace Components {
   }
 }
 
+declare global {
+
+
+  interface HTMLShPanelElement extends Components.ShPanel, HTMLStencilElement {}
+  var HTMLShPanelElement: {
+    prototype: HTMLShPanelElement;
+    new (): HTMLShPanelElement;
+  };
+  interface HTMLElementTagNameMap {
+    'sh-panel': HTMLShPanelElement;
+  }
+}
+
 declare namespace LocalJSX {
-  interface ShPanel extends JSXBase.HTMLAttributes {
+  interface ShPanel extends JSXBase.HTMLAttributes<HTMLShPanelElement> {
     /**
     * Event emitted on click of panel header.
     */
@@ -47,21 +60,4 @@ declare module "@stencil/core" {
   }
 }
 
-
-declare global {
-
-
-
-  interface HTMLShPanelElement extends Components.ShPanel, HTMLStencilElement {}
-  var HTMLShPanelElement: {
-    prototype: HTMLShPanelElement;
-    new (): HTMLShPanelElement;
-  };
-
-  interface HTMLElementTagNameMap {
-    'sh-panel': HTMLShPanelElement;
-  }
-
-  interface ElementTagNameMap extends HTMLElementTagNameMap {}
-}
 

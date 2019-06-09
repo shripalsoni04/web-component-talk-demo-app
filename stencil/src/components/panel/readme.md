@@ -32,6 +32,13 @@ Type: `Promise<void>`
 
 
 
+## CSS Custom Properties
+
+| Name                | Description                   |
+| ------------------- | ----------------------------- |
+| `--header-bg-color` | Panel header background color |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
